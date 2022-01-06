@@ -1,0 +1,21 @@
+{
+    "name": "Thingiverse download all",
+    "description": "Adds a button to a thing page which will zip up all the thing files and offer them for download",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.thingiverse.com/thing*"
+            ],
+            "js": [
+                "download_all.js"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
