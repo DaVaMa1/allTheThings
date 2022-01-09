@@ -16,3 +16,6 @@ The plugin currently works by searching the html for certain elements by classna
 Clone the repo, you will need [npm](https://www.npmjs.com/) and [webpack](https://webpack.js.org/).
 Open a command prompt in the repo, run npm-install and you should be good to go. 
 Run `npx webpack` to get all your code in 1 file and upload that as the new extension. This generated file is not included in the repo.
+
+# License
+Not sure if I did that part correctly, do whatever you want with this code
