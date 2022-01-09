@@ -1,7 +1,7 @@
 {
-    "name": "Thingiverse download all",
-    "description": "Adds a button to a thing page which will zip up all the thing files and offer them for download",
-    "version": "1.0",
+    "name": "alltheThings",
+    "description": "A real download all button for Thingiverse",
+    "version": "0.0.1",
     "manifest_version": 3,
     "permissions": [
         "activeTab",
@@ -17,5 +17,11 @@
             ],
             "run_at": "document_end"
         }
-    ]
+    ],
+    "icons": {
+        "16": "/images/get_started16.png",
+        "32": "/images/get_started32.png",
+        "48": "/images/get_started48.png",
+        "128": "/images/get_started128.png"
+    }
 }
