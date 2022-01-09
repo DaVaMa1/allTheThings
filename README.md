@@ -13,4 +13,4 @@ Feel free to open an issue, PR, or just fork it and go your own way.
 #Instructions
 Clone the repo, you will need [npm](https://www.npmjs.com/) and [webpack](https://webpack.js.org/).
 Open a command prompt in the repo, run npm-install and you should be good to go. 
-Run `npx webpack` to get all your code in 1 file and upload that as the new extension.
+Run `npx webpack` to get all your code in 1 file and upload that as the new extension. This generated file is not included in the repo.
