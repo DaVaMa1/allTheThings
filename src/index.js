@@ -1,4 +1,5 @@
-var zip = require('zip')
+var JSZip = require("jszip");
+var fileSaver = require("file-saver");
 
 function wrapInTimeout(callback) {
     if (!callback()) {
@@ -23,21 +24,25 @@ function injectElements() {
 
 injectElements()
 
-function zipFiles() {
-    downloadButtons = document.getElementsByClassName("ThingFile__download--2SUQd");
+async function zipFiles() {
+    var downloadButtons = document.getElementsByClassName("ThingFile__download--2SUQd");
     if (downloadButtons.length == 0) {
         return false
     }
     else {
 
-        var allFiles = []
-        // for (let downloadButton of downloadButtons) {
-        fetch(downloadButtons[0].getAttribute("href"))
-            .then(response => response.blob)
-            .then(blob => allFiles.push(new File([blob], "Lalalala")))
-            .then(number => alert(number))
-        // .then(_ => window.FileSystem.pi)
-        // }
+        var zip = new JSZip();
+        for (let downloadButton of downloadButtons) {
+            var response = await fetch(downloadButton.getAttribute("href"))
+            var filename = response.url.split('/').pop()
+            var blob = await response.blob()
+            zip.file(filename, blob)
+        }
+
+        zip.generateAsync({ type: "blob" })
+            .then((content) => {
+                saveAs(content, "example.zip");
+            });
         return true
     }
 }
