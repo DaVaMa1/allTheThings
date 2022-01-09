@@ -38,10 +38,11 @@ async function zipFiles() {
             var blob = await response.blob()
             zip.file(filename, blob)
         }
+        var zipname = document.getElementsByClassName("ThingFilesListHeader__fileName--1AT9J")[0].innerHTML
 
         zip.generateAsync({ type: "blob" })
             .then((content) => {
-                saveAs(content, "example.zip");
+                saveAs(content, zipname);
             });
         return true
     }
